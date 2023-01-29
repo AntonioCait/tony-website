@@ -1,5 +1,5 @@
 /* google font */
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk&display=swap'); */
 
 /* custom font  Cartograph CF*/
 @font-face {
@@ -11,8 +11,19 @@
 	font-display: swap; */
 }
 
+/* custom font MonoLisa-Regular */
+@font-face {
+	font-family: 'MonoLisa-Regular';
+	src: url('./assets/MonoLisa-Regular.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}
+
 :root {
-	font-family: 'Cartograph CF', sans-serif;
+	/* font-family: 'Cartograph CF', sans-serif; */
+	/* monolisa */
+	font-family: 'MonoLisa-Regular', sans-serif;
 	font-size: 16px;
 	line-height: 24px;
 	font-weight: 400;
@@ -41,5 +52,5 @@ a {
 	box-sizing: border-box;
 	padding: 0;
 	margin: 0;
-	font-family: 'Space Grotesk', sans-serif;
+	/* font-family: 'Space Grotesk', sans-serif; */
 }
