@@ -9,6 +9,14 @@ const StyledSectionHero = styled.section`
 	height: 100vh;
 	padding-top: 80px;
 	padding-bottom: 5rem;
+
+	@media (max-width: 768px) {
+		height: 100%;
+	}
+
+	@media (max-width: 480px) {
+		height: 100%;
+	}
 `;
 
 const StyledSectionContent = styled.main`
