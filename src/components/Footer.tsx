@@ -79,7 +79,7 @@ export default function Footer() {
 					</StyledBox>
 					<StyledBox>
 						<StyledSpanBlue>{spanTagOpen}</StyledSpanBlue>
-						<StyledSpanWhite>Designed and built by</StyledSpanWhite>
+						<StyledSpanWhite>Developed by</StyledSpanWhite>
 						<StyledSpanBlue>{spanTagClose}</StyledSpanBlue>
 					</StyledBox>
 					<StyledBox>
