@@ -76,10 +76,10 @@ const StyledMobileMenuActive = styled.div`
 	display: grid;
 	grid-template-columns: 1fr;
 	place-items: center;
-	/* background-color: #0d0d0d; */
-	background-color: rgba(13, 13, 13, 0.9);
+	background-color: #0d0d0d;
+	/* background-color: rgba(13, 13, 13, 0.9);
 	backdrop-filter: blur(10px);
-	-webkit-backdrop-filter: blur(10px);
+	-webkit-backdrop-filter: blur(10px); */
 	height: 100vh;
 	width: 100vw;
 	position: absolute;
