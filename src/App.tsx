@@ -82,7 +82,7 @@ function Title(props: { title: string; content: string }) {
 					<h1>
 						<Typewriter
 							options={{
-								strings: [props.title],
+								strings: [`Hi, I'm a`, props.title],
 								autoStart: true,
 								loop: true,
 								delay: 230,
