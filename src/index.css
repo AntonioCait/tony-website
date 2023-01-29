@@ -1,0 +1,42 @@
+/* color variables */
+
+/* custom font  Cartograph CF*/
+@font-face {
+	font-family: 'Cartograph CF';
+	src: url('./assets/CartographCF-Regular.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}
+
+:root {
+	font-family: 'Cartograph CF', sans-serif;
+	font-size: 16px;
+	line-height: 24px;
+	font-weight: 400;
+
+	/* color variables */
+	--black: #0d0d0d;
+	--white: #f2f2f2;
+	--red: #f21d44;
+	--blue: #72bcd9;
+	--green: #30d9ba;
+
+	background-color: var(--black);
+
+	font-synthesis: none;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-text-size-adjust: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
