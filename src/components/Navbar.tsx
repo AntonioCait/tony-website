@@ -77,7 +77,7 @@ const StyledMobileMenuActive = styled.div`
 	grid-template-columns: 1fr;
 	place-items: center;
 	/* background-color: #0d0d0d; */
-	background-color: rgba(13, 13, 13, 0.5);
+	background-color: rgba(13, 13, 13, 0.9);
 	backdrop-filter: blur(10px);
 	-webkit-backdrop-filter: blur(10px);
 	height: 100vh;
@@ -118,6 +118,10 @@ export default function Navbar() {
 
 	const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false);
 
+	const toggleMobileMenu = () => {
+		setIsMobileMenuOpen(!isMobileMenuOpen);
+	};
+
 	return (
 		<>
 			<StyledNavbar>
@@ -147,16 +151,12 @@ export default function Navbar() {
 					</Link>
 				</StyledBoxNav>
 
-				<StyledMobileBtn
-					onClick={() => {
-						setIsMobileMenuOpen(!isMobileMenuOpen);
-					}}
-				>
+				<StyledMobileBtn onClick={toggleMobileMenu}>
 					<StyledSpanBlue>{mobileBtnContent}</StyledSpanBlue>
 				</StyledMobileBtn>
 				{isMobileMenuOpen && (
 					<StyledMobileMenuActive>
-						<Link to="/">
+						<Link to="/" onClick={toggleMobileMenu}>
 							<StyledBoxLogo>
 								<StyledSpanBlue>{imgTagOpen + ''}</StyledSpanBlue>
 								<StyledSpanRed>{imgSrcRed}</StyledSpanRed>
@@ -164,24 +164,20 @@ export default function Navbar() {
 								<StyledSpanBlue>{imgTagClose}</StyledSpanBlue>
 							</StyledBoxLogo>
 						</Link>
-						<StyledMobileBtn
-							onClick={() => {
-								setIsMobileMenuOpen(!isMobileMenuOpen);
-							}}
-						>
+						<StyledMobileBtn onClick={toggleMobileMenu}>
 							<StyledSpanBlue>{mobileBtnCloseContent}</StyledSpanBlue>
 						</StyledMobileBtn>
-						<Link to="/about">
+						<Link to="/about" onClick={toggleMobileMenu}>
 							<StyledSpanBlue>{aboutTagOpen}</StyledSpanBlue>
 							<StyledSpanWhite>{aboutContent}</StyledSpanWhite>
 							<StyledSpanBlue>{aboutTagClose}</StyledSpanBlue>
 						</Link>
-						<Link to="/portfolio">
+						<Link to="/portfolio" onClick={toggleMobileMenu}>
 							<StyledSpanBlue>{aboutTagOpen}</StyledSpanBlue>
 							<StyledSpanWhite>{portfolioContent}</StyledSpanWhite>
 							<StyledSpanBlue>{aboutTagClose}</StyledSpanBlue>
 						</Link>
-						<Link to="/contact">
+						<Link to="/contact" onClick={toggleMobileMenu}>
 							<StyledSpanBlue>{aboutTagOpen}</StyledSpanBlue>
 							<StyledSpanWhite>{contactContent}</StyledSpanWhite>
 							<StyledSpanBlue>{aboutTagClose}</StyledSpanBlue>
