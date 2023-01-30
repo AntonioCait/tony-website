@@ -91,7 +91,7 @@ const StyledMobileMenuActive = styled(motion.div)`
 	background-color: rgba(13, 13, 13, 0.967);
 	backdrop-filter: blur(10px);
 	-webkit-backdrop-filter: blur(5px);
-	height: 30vh;
+	height: 50vh;
 	width: 100vw;
 	position: absolute;
 	top: 80px;
