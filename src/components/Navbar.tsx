@@ -73,14 +73,20 @@ const StyledMobileBtn = styled.p`
 `;
 
 const StyledMobileMenuActive = styled.div`
-	display: grid;
+	/* display: grid;
 	grid-template-columns: 1fr;
-	place-items: center;
-	background-color: #0d0d0d;
-	/* background-color: rgba(13, 13, 13, 0.9);
+	place-items: center; */
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	align-items: center;
+	align-content: center;
+	/* background-color: #0d0d0d; */
+	background-color: rgba(13, 13, 13, 0.967);
 	backdrop-filter: blur(10px);
-	-webkit-backdrop-filter: blur(10px); */
-	height: 100vh;
+	-webkit-backdrop-filter: blur(5px);
+	height: 70vh;
 	width: 100vw;
 	position: absolute;
 	top: 0;
@@ -172,14 +178,14 @@ export default function Navbar() {
 							<StyledSpanWhite>{aboutContent}</StyledSpanWhite>
 							<StyledSpanBlue>{aboutTagClose}</StyledSpanBlue>
 						</Link>
-						<Link to="/portfolio" onClick={toggleMobileMenu}>
-							<StyledSpanBlue>{aboutTagOpen}</StyledSpanBlue>
-							<StyledSpanWhite>{portfolioContent}</StyledSpanWhite>
-							<StyledSpanBlue>{aboutTagClose}</StyledSpanBlue>
-						</Link>
 						<Link to="/contact" onClick={toggleMobileMenu}>
 							<StyledSpanBlue>{aboutTagOpen}</StyledSpanBlue>
 							<StyledSpanWhite>{contactContent}</StyledSpanWhite>
+							<StyledSpanBlue>{aboutTagClose}</StyledSpanBlue>
+						</Link>
+						<Link to="/portfolio" onClick={toggleMobileMenu}>
+							<StyledSpanBlue>{aboutTagOpen}</StyledSpanBlue>
+							<StyledSpanWhite>{portfolioContent}</StyledSpanWhite>
 							<StyledSpanBlue>{aboutTagClose}</StyledSpanBlue>
 						</Link>
 					</StyledMobileMenuActive>

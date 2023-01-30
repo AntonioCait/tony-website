@@ -1,6 +1,9 @@
+import { Link } from 'react-router-dom';
+
 // typewriter effect
 import Typewriter from 'typewriter-effect';
 import styled from 'styled-components';
+import Portfolio from './Portfolio';
 
 // styled components
 
@@ -9,7 +12,7 @@ const StyledSectionHero = styled.section`
 	height: 100vh;
 	padding-top: 80px;
 	padding-bottom: 5rem;
-	margin-bottom: 1rem;
+	/* margin-bottom: 1rem; */
 `;
 
 const StyledSectionContent = styled.main`
@@ -151,14 +154,60 @@ function Title(props: { title: string }) {
 	);
 }
 
+function PortfolioLink(props: { title: string }) {
+	const openTagh1: string = '<h1>';
+	const closeTagh1: string = '</h1>';
+	const openDivTag: string = '<div>';
+	const closeDivTag: string = '</div>';
+	const buttonTagOpen: string = '<button>';
+	const buttonTagClose: string = '</button>';
+
+	return (
+		<>
+			{/* add this inside the strings '<h1>Front-End Developer</h1>' but h1 tag color blue and the content color red*/}
+			<StyledTitleDiv>
+				<StyledSpanBlue>{openTagh1}</StyledSpanBlue>
+				<StyledSpanRed>
+					<h1>
+						<Typewriter
+							options={{
+								strings: [props.title],
+								autoStart: true,
+								loop: true,
+								delay: 230,
+								deleteSpeed: 100,
+							}}
+						/>
+					</h1>
+				</StyledSpanRed>
+				<StyledSpanBlue>{closeTagh1}</StyledSpanBlue>
+			</StyledTitleDiv>
+
+			<StyledContentDiv>
+				<StyledSpanRedSmall>{openDivTag}</StyledSpanRedSmall>
+				<StyledLinkContainer>
+					<StyledSpanBlue>{buttonTagOpen}</StyledSpanBlue>
+					<StyledSpanWhite>
+						<Link to="/portfolio">Portfolio</Link>
+					</StyledSpanWhite>
+					<StyledSpanBlue>{buttonTagClose}</StyledSpanBlue>
+				</StyledLinkContainer>
+				<StyledSpanRedSmall>{closeDivTag}</StyledSpanRedSmall>
+			</StyledContentDiv>
+		</>
+	);
+}
+
 export default function Contact() {
 	const titleSocials = 'Social Links';
+	const titlePortfolio = 'Projects';
 
 	return (
 		<>
 			<StyledSectionHero>
 				<StyledSectionContent>
 					<Title title={titleSocials} />
+					<PortfolioLink title={titlePortfolio} />
 				</StyledSectionContent>
 			</StyledSectionHero>
 		</>
