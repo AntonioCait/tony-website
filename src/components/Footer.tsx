@@ -41,8 +41,8 @@ const StyledSpanWhite = styled.span`
 const StyledFooter = styled.footer`
 	width: 100%;
 	height: 100%;
+	/* footer always on bottom */
 	bottom: 0;
-	left: 0;
 `;
 
 const StyledFooterDiv = styled.div`

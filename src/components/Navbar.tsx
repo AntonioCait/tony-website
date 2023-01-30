@@ -139,14 +139,14 @@ export default function Navbar() {
 						<StyledSpanWhite>{aboutContent}</StyledSpanWhite>
 						<StyledSpanBlue>{aboutTagClose}</StyledSpanBlue>
 					</Link>
-					<Link to="/portfolio">
-						<StyledSpanBlue>{aboutTagOpen}</StyledSpanBlue>
-						<StyledSpanWhite>{portfolioContent}</StyledSpanWhite>
-						<StyledSpanBlue>{aboutTagClose}</StyledSpanBlue>
-					</Link>
 					<Link to="/contact">
 						<StyledSpanBlue>{aboutTagOpen}</StyledSpanBlue>
 						<StyledSpanWhite>{contactContent}</StyledSpanWhite>
+						<StyledSpanBlue>{aboutTagClose}</StyledSpanBlue>
+					</Link>
+					<Link to="/portfolio">
+						<StyledSpanBlue>{aboutTagOpen}</StyledSpanBlue>
+						<StyledSpanWhite>{portfolioContent}</StyledSpanWhite>
 						<StyledSpanBlue>{aboutTagClose}</StyledSpanBlue>
 					</Link>
 				</StyledBoxNav>
