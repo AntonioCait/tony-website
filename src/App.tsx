@@ -1,4 +1,4 @@
-// import { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import reactLogo from './assets/react.svg';
 import './App.css';
 // typewriter effect
@@ -213,6 +213,11 @@ function App() {
 		'Figma, Adobe Illustrator.',
 		'Python.',
 	];
+
+	// onload scroll to top
+	useEffect(() => {
+		window.scrollTo(0, 0);
+	}, []);
 	return (
 		<>
 			<StyledSectionHero

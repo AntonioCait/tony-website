@@ -1,4 +1,5 @@
 import { NavLink } from 'react-router-dom';
+import { useEffect } from 'react';
 
 // typewriter effect
 import Typewriter from 'typewriter-effect';
@@ -219,6 +220,10 @@ function PortfolioLink(props: { title: string }) {
 export default function Contact() {
 	const titleSocials = 'Social Links';
 	const titlePortfolio = 'Projects';
+
+	useEffect(() => {
+		window.scrollTo(0, 0);
+	}, []);
 
 	return (
 		<>

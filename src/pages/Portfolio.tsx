@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 // import projects from '../projects';
 import { projects } from '../projects';
 
@@ -190,6 +191,11 @@ function Projects() {
 export default function Portfolio() {
 	const title = 'My projects';
 	const content = `Here you can see some of my work. These projects demonstrate my skills, as well as my passion for creating a website. I am always looking for new opportunities to grow and challenge myself as a developer. I hope you enjoy exploring my projects.`;
+
+	useEffect(() => {
+		window.scrollTo(0, 0);
+	}, []);
+
 	return (
 		<>
 			<StyledSectionHero
