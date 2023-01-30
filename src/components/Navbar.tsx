@@ -187,7 +187,7 @@ export default function Navbar() {
 									: { color: '#f2f2f2', transition: 'all 0.5s ease' }
 							}
 						>
-							Conact
+							Contact
 						</NavLink>
 						<StyledSpanBlue>{aboutTagClose}</StyledSpanBlue>
 					</StyledNavLinks>
