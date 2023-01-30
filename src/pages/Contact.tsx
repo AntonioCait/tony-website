@@ -1,13 +1,16 @@
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 // typewriter effect
 import Typewriter from 'typewriter-effect';
 import styled from 'styled-components';
-import Portfolio from './Portfolio';
+// import Portfolio from './Portfolio';
+
+// framer motion
+import { motion } from 'framer-motion';
 
 // styled components
 
-const StyledSectionHero = styled.section`
+const StyledSectionHero = styled(motion.section)`
 	width: 100%;
 	height: 100vh;
 	padding-top: 80px;
@@ -188,7 +191,22 @@ function PortfolioLink(props: { title: string }) {
 				<StyledLinkContainer>
 					<StyledSpanBlue>{buttonTagOpen}</StyledSpanBlue>
 					<StyledSpanWhite>
-						<Link to="/portfolio">Portfolio</Link>
+						<NavLink
+							to="/portfolio"
+							style={({ isActive }) =>
+								isActive
+									? {
+											color: '#30d9ba',
+											// glow text
+											textShadow:
+												'0 0 5px #30d9ba, 0 0 10px #30d9ba, 0 0 15px #30d9ba, 0 0 20px #30d9ba, 0 0 25px #30d9ba, 0 0 30px #30d9ba, 0 0 35px #30d9ba',
+											transition: 'all 0.5s ease',
+									  }
+									: { color: '#f2f2f2', transition: 'all 0.5s ease' }
+							}
+						>
+							Portfolio
+						</NavLink>
 					</StyledSpanWhite>
 					<StyledSpanBlue>{buttonTagClose}</StyledSpanBlue>
 				</StyledLinkContainer>
@@ -204,7 +222,12 @@ export default function Contact() {
 
 	return (
 		<>
-			<StyledSectionHero>
+			<StyledSectionHero
+				// appear from the bottom to top
+				initial={{ opacity: 0, y: 100 }}
+				animate={{ opacity: 1, y: 0 }}
+				transition={{ duration: 1 }}
+			>
 				<StyledSectionContent>
 					<Title title={titleSocials} />
 					<PortfolioLink title={titlePortfolio} />

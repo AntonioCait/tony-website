@@ -1,21 +1,19 @@
 /* google font */
 /* @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk&display=swap'); */
 /* @import url('https://fonts.googleapis.com/css2?family=Nova+Mono&display=swap'); */
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap'); */
 
-/* custom font MonoLisa-Regular */
-/* @font-face {
-	font-family: 'MonoLisa-Regular';
-	src: url('./assets/MonoLisa-Regular.ttf') format('truetype');
+/* custom font jetbrains mono */
+@font-face {
+	font-family: 'JetBrains Mono';
+	src: url('../src/assets/JetBrainsMono-Regular.ttf') format('truetype');
 	font-weight: normal;
 	font-style: normal;
-	font-display: swap;
-} */
+}
 
 :root {
-	/* font-family: 'Cartograph CF', sans-serif; */
-	/* monolisa */
-	/* font-family: 'MonoLisa-Regular', sans-serif; */
+	/* font family jetbrains*/
+	font-family: 'JetBrains Mono', monospace;
 	font-size: 16px;
 	line-height: 24px;
 	/* font-weight: 400; */
@@ -38,7 +36,7 @@
 
 a {
 	text-decoration: none;
-	color: var(--white);
+	/* color: var(--white); */
 }
 
 * {
@@ -47,5 +45,10 @@ a {
 	margin: 0;
 	/* font-family: 'Space Grotesk', sans-serif; */
 	/* font-family: 'Nova Mono', monospace; */
-	font-family: 'IBM Plex Mono', monospace;
+	/* font-family: 'IBM Plex Mono', monospace; */
+}
+
+/* scroll behavior */
+html {
+	scroll-behavior: smooth;
 }

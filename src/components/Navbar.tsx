@@ -1,9 +1,11 @@
 // styled-components
 import styled from 'styled-components';
 // router link
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 // state
 import { useState } from 'react';
+// motion
+import { motion } from 'framer-motion';
 
 // styled components
 
@@ -11,10 +13,9 @@ const StyledNavbar = styled.nav`
 	/* background-color: #0d0d0d; */
 	/* glass effect */
 	/* background rgba color #0d0d0d */
-	background-color: rgba(13, 13, 13, 0.5);
+	background-color: rgba(13, 13, 13, 0.967);
 	backdrop-filter: blur(10px);
-	-webkit-backdrop-filter: blur(10px);
-
+	-webkit-backdrop-filter: blur(5px);
 	/* background-color: #717171; */
 	width: 100%;
 	height: 80px;
@@ -72,7 +73,11 @@ const StyledMobileBtn = styled.p`
 	}
 `;
 
-const StyledMobileMenuActive = styled.div`
+const StyledNavLinks = styled.div`
+	display: flex;
+`;
+
+const StyledMobileMenuActive = styled(motion.div)`
 	/* display: grid;
 	grid-template-columns: 1fr;
 	place-items: center; */
@@ -86,10 +91,10 @@ const StyledMobileMenuActive = styled.div`
 	background-color: rgba(13, 13, 13, 0.967);
 	backdrop-filter: blur(10px);
 	-webkit-backdrop-filter: blur(5px);
-	height: 70vh;
+	height: 30vh;
 	width: 100vw;
 	position: absolute;
-	top: 0;
+	top: 80px;
 	left: 0;
 	z-index: 100;
 	color: #f2f2f2;
@@ -101,6 +106,7 @@ const StyledMobileMenuActive = styled.div`
 	/* opacity: 0.8; */
 	/* glass effect */
 	/* backdrop-filter: blur(3px); */
+	/* box shadow soft only at the bottom color #f2f2f2*/
 	@media (min-width: 768px) {
 		display: none;
 	}
@@ -140,29 +146,94 @@ export default function Navbar() {
 					</StyledBoxLogo>
 				</Link>
 				<StyledBoxNav>
-					<Link to="/about">
+					{/* <NavLink to="/about" style={({ isActive }) => (isActive ? { color: 'red' } : { color: 'blue' })}>
 						<StyledSpanBlue>{aboutTagOpen}</StyledSpanBlue>
 						<StyledSpanWhite>{aboutContent}</StyledSpanWhite>
 						<StyledSpanBlue>{aboutTagClose}</StyledSpanBlue>
-					</Link>
-					<Link to="/contact">
+					</NavLink> */}
+					<StyledNavLinks>
 						<StyledSpanBlue>{aboutTagOpen}</StyledSpanBlue>
-						<StyledSpanWhite>{contactContent}</StyledSpanWhite>
+						<NavLink
+							to="/about"
+							style={({ isActive }) =>
+								isActive
+									? {
+											color: '#30d9ba',
+											// glow text
+											textShadow:
+												'0 0 5px #30d9ba, 0 0 10px #30d9ba, 0 0 15px #30d9ba, 0 0 20px #30d9ba, 0 0 25px #30d9ba, 0 0 30px #30d9ba, 0 0 35px #30d9ba',
+											transition: 'all 0.5s ease',
+									  }
+									: { color: '#f2f2f2', transition: 'all 0.5s ease' }
+							}
+						>
+							About
+						</NavLink>
 						<StyledSpanBlue>{aboutTagClose}</StyledSpanBlue>
-					</Link>
-					<Link to="/portfolio">
+					</StyledNavLinks>
+					<StyledNavLinks>
 						<StyledSpanBlue>{aboutTagOpen}</StyledSpanBlue>
-						<StyledSpanWhite>{portfolioContent}</StyledSpanWhite>
+						<NavLink
+							to="/contact"
+							style={({ isActive }) =>
+								isActive
+									? {
+											color: '#30d9ba',
+											// glow text
+											textShadow:
+												'0 0 5px #30d9ba, 0 0 10px #30d9ba, 0 0 15px #30d9ba, 0 0 20px #30d9ba, 0 0 25px #30d9ba, 0 0 30px #30d9ba, 0 0 35px #30d9ba',
+											transition: 'all 0.5s ease',
+									  }
+									: { color: '#f2f2f2', transition: 'all 0.5s ease' }
+							}
+						>
+							Conact
+						</NavLink>
 						<StyledSpanBlue>{aboutTagClose}</StyledSpanBlue>
-					</Link>
+					</StyledNavLinks>
+					<StyledNavLinks>
+						<StyledSpanBlue>{aboutTagOpen}</StyledSpanBlue>
+						<NavLink
+							to="/portfolio"
+							style={({ isActive }) =>
+								isActive
+									? {
+											color: '#30d9ba',
+											// glow text
+											textShadow:
+												'0 0 5px #30d9ba, 0 0 10px #30d9ba, 0 0 15px #30d9ba, 0 0 20px #30d9ba, 0 0 25px #30d9ba, 0 0 30px #30d9ba, 0 0 35px #30d9ba',
+											transition: 'all 0.5s ease',
+									  }
+									: { color: '#f2f2f2', transition: 'all 0.5s ease' }
+							}
+						>
+							Portfolio
+						</NavLink>
+						<StyledSpanBlue>{aboutTagClose}</StyledSpanBlue>
+					</StyledNavLinks>
 				</StyledBoxNav>
 
 				<StyledMobileBtn onClick={toggleMobileMenu}>
-					<StyledSpanBlue>{mobileBtnContent}</StyledSpanBlue>
+					<StyledSpanBlue>{isMobileMenuOpen ? mobileBtnCloseContent : mobileBtnContent}</StyledSpanBlue>
 				</StyledMobileBtn>
 				{isMobileMenuOpen && (
-					<StyledMobileMenuActive>
-						<Link to="/" onClick={toggleMobileMenu}>
+					<StyledMobileMenuActive
+						// appear from the left
+						initial={{ x: '-100vw' }}
+						// animate to the right
+						animate={{ x: 0 }}
+						transition={{
+							type: 'tween',
+						}}
+						// exit to the left
+						exit={{
+							x: '-100vw',
+							transition: {
+								type: 'tween',
+							},
+						}}
+					>
+						{/* <Link to="/" onClick={toggleMobileMenu}>
 							<StyledBoxLogo>
 								<StyledSpanBlue>{imgTagOpen + ''}</StyledSpanBlue>
 								<StyledSpanRed>{imgSrcRed}</StyledSpanRed>
@@ -172,22 +243,70 @@ export default function Navbar() {
 						</Link>
 						<StyledMobileBtn onClick={toggleMobileMenu}>
 							<StyledSpanBlue>{mobileBtnCloseContent}</StyledSpanBlue>
-						</StyledMobileBtn>
-						<Link to="/about" onClick={toggleMobileMenu}>
+						</StyledMobileBtn> */}
+						<StyledNavLinks>
 							<StyledSpanBlue>{aboutTagOpen}</StyledSpanBlue>
-							<StyledSpanWhite>{aboutContent}</StyledSpanWhite>
+							<NavLink
+								to="/about"
+								onClick={toggleMobileMenu}
+								style={({ isActive }) =>
+									isActive
+										? {
+												color: '#30d9ba',
+												// glow text
+												textShadow:
+													'0 0 5px #30d9ba, 0 0 10px #30d9ba, 0 0 15px #30d9ba, 0 0 20px #30d9ba, 0 0 25px #30d9ba, 0 0 30px #30d9ba, 0 0 35px #30d9ba',
+												transition: 'all 0.5s ease',
+										  }
+										: { color: '#f2f2f2', transition: 'all 0.5s ease' }
+								}
+							>
+								About
+							</NavLink>
 							<StyledSpanBlue>{aboutTagClose}</StyledSpanBlue>
-						</Link>
-						<Link to="/contact" onClick={toggleMobileMenu}>
+						</StyledNavLinks>
+						<StyledNavLinks>
 							<StyledSpanBlue>{aboutTagOpen}</StyledSpanBlue>
-							<StyledSpanWhite>{contactContent}</StyledSpanWhite>
+							<NavLink
+								to="/contact"
+								onClick={toggleMobileMenu}
+								style={({ isActive }) =>
+									isActive
+										? {
+												color: '#30d9ba',
+												// glow text
+												textShadow:
+													'0 0 5px #30d9ba, 0 0 10px #30d9ba, 0 0 15px #30d9ba, 0 0 20px #30d9ba, 0 0 25px #30d9ba, 0 0 30px #30d9ba, 0 0 35px #30d9ba',
+												transition: 'all 0.5s ease',
+										  }
+										: { color: '#f2f2f2', transition: 'all 0.5s ease' }
+								}
+							>
+								Contact
+							</NavLink>
 							<StyledSpanBlue>{aboutTagClose}</StyledSpanBlue>
-						</Link>
-						<Link to="/portfolio" onClick={toggleMobileMenu}>
+						</StyledNavLinks>
+						<StyledNavLinks>
 							<StyledSpanBlue>{aboutTagOpen}</StyledSpanBlue>
-							<StyledSpanWhite>{portfolioContent}</StyledSpanWhite>
+							<NavLink
+								to="/portfolio"
+								onClick={toggleMobileMenu}
+								style={({ isActive }) =>
+									isActive
+										? {
+												color: '#30d9ba',
+												// glow text
+												textShadow:
+													'0 0 5px #30d9ba, 0 0 10px #30d9ba, 0 0 15px #30d9ba, 0 0 20px #30d9ba, 0 0 25px #30d9ba, 0 0 30px #30d9ba, 0 0 35px #30d9ba',
+												transition: 'all 0.5s ease',
+										  }
+										: { color: '#f2f2f2', transition: 'all 0.5s ease' }
+								}
+							>
+								Portfolio
+							</NavLink>
 							<StyledSpanBlue>{aboutTagClose}</StyledSpanBlue>
-						</Link>
+						</StyledNavLinks>
 					</StyledMobileMenuActive>
 				)}
 			</StyledNavbar>

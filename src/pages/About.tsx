@@ -1,10 +1,12 @@
 // typewriter effect
 import Typewriter from 'typewriter-effect';
 import styled from 'styled-components';
+// framer motion
+import { motion } from 'framer-motion';
 
 // styled components
 
-const StyledSectionHero = styled.section`
+const StyledSectionHero = styled(motion.section)`
 	width: 100%;
 	height: 100vh;
 	padding-top: 80px;
@@ -110,10 +112,15 @@ function Title(props: { title: string; content: string }) {
 
 export default function About() {
 	const title = 'About me';
-	const content = `My name is Jesus Antonio Iturriaga, I’m 24 and, I studied    for a bachelor's Degree In Graphic Design and Digital Animation at TecMilenio University, I reside in Mexico. I'm certified in Interactivity and Multimedia Design, Game Design and 3D Animation, but I mainly focus on Front-End Web Development using React, TypeScript, JavaScript, Framer Motion, and UI/UX Design. Also, I have two Coursera specializations: Google UX Design and Meta Front-End Development, just to polish my skills, but I love to learn new things, for now, I keep learning Python and NextJS`;
+	const content = `My name is Antonio, I’m 24 and, I studied for a bachelor's Degree In Graphic Design and Digital Animation at TecMilenio University, I reside in Mexico. I'm certified in Interactivity and Multimedia Design, Game Design and 3D Animation, but I mainly focus on Front-End Web Development using React, TypeScript, JavaScript, Framer Motion, and UI/UX Design. Also, I have two Coursera specializations: Google UX Design and Meta Front-End Development, just to polish my skills, but I love to learn new things, for now, I keep learning Python and NextJS`;
 	return (
 		<>
-			<StyledSectionHero>
+			<StyledSectionHero
+				// appear from the bottom to top
+				initial={{ opacity: 0, y: 100 }}
+				animate={{ opacity: 1, y: 0 }}
+				transition={{ duration: 1 }}
+			>
 				<StyledSectionContent>
 					<Title title={title} content={content} />
 				</StyledSectionContent>

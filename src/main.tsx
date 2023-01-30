@@ -9,17 +9,21 @@ import Contact from './pages/Contact';
 import Portfolio from './pages/Portfolio';
 // browser rotuer dom 6
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+// frame motion
+import { AnimatePresence } from 'framer-motion';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
 	<React.StrictMode>
 		<BrowserRouter>
 			<Navbar />
-			<Routes>
-				<Route path="/" element={<App />} />
-				<Route path="/about" element={<About />} />
-				<Route path="/portfolio" element={<Portfolio />} />
-				<Route path="/contact" element={<Contact />} />
-			</Routes>
+			<AnimatePresence exitBeforeEnter>
+				<Routes>
+					<Route path="/" element={<App />} />
+					<Route path="/about" element={<About />} />
+					<Route path="/portfolio" element={<Portfolio />} />
+					<Route path="/contact" element={<Contact />} />
+				</Routes>
+			</AnimatePresence>
 			<Footer />
 		</BrowserRouter>
 	</React.StrictMode>

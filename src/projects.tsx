@@ -7,17 +7,22 @@ type Project = {
 export const projects: Project[] = [
 	{
 		id: 1,
-		name: 'Project 1',
-		link: 'https://www.google.com',
+		name: 'Netflix TV Shows Page',
+		link: 'https://netflixpage-app.vercel.app/',
 	},
 	{
-		id: 1,
-		name: 'Project 1',
-		link: 'https://www.google.com',
+		id: 2,
+		name: 'Movies Page (API)',
+		link: 'https://moviedb-app-gamma.vercel.app/',
 	},
 	{
-		id: 1,
-		name: 'Project 1',
-		link: 'https://www.google.com',
+		id: 3,
+		name: 'Password Generator',
+		link: 'https://password-g-app-seven.vercel.app/',
+	},
+	{
+		id: 4,
+		name: 'Restaurant Page (Project)',
+		link: 'https://capstone-project-mu-five.vercel.app/',
 	},
 ];

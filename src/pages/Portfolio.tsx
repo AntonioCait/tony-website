@@ -5,9 +5,12 @@ import { projects } from '../projects';
 import Typewriter from 'typewriter-effect';
 import styled from 'styled-components';
 
+// framer motion
+import { motion } from 'framer-motion';
+
 // styled components
 
-const StyledSectionHero = styled.section`
+const StyledSectionHero = styled(motion.section)`
 	width: 100%;
 	height: 100%;
 	padding-top: 80px;
@@ -189,7 +192,12 @@ export default function Portfolio() {
 	const content = `Here you can see some of my work. These projects demonstrate my skills, as well as my passion for creating a website. I am always looking for new opportunities to grow and challenge myself as a developer. I hope you enjoy exploring my projects.`;
 	return (
 		<>
-			<StyledSectionHero>
+			<StyledSectionHero
+				// appear from the bottom to top
+				initial={{ opacity: 0, y: 100 }}
+				animate={{ opacity: 1, y: 0 }}
+				transition={{ duration: 1 }}
+			>
 				<StyledSectionContent>
 					<Title title={title} content={content} />
 					<Projects />
