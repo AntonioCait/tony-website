@@ -137,7 +137,12 @@ export default function Navbar() {
 	return (
 		<>
 			<StyledNavbar>
-				<Link to="/" onClick={toggleMobileMenu}>
+				<Link
+					to="/"
+					onClick={() => {
+						setIsMobileMenuOpen(false);
+					}}
+				>
 					<StyledBoxLogo>
 						<StyledSpanBlue>{imgTagOpen + ''}</StyledSpanBlue>
 						<StyledSpanRed>{imgSrcRed}</StyledSpanRed>

@@ -211,7 +211,6 @@ function App() {
 		'ReactJS, NextJS, TypeScript, JavaScript.',
 		'HTML & CSS, Tailwind CSS, Webflow.',
 		'Figma, Adobe Illustrator.',
-		'Python.',
 	];
 
 	// onload scroll to top
