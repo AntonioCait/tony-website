@@ -160,6 +160,9 @@ function Projects() {
 	const linkOpenTag: string = '<Link>';
 	const linkCloseTag: string = '</Link>';
 
+	const projectsCopy = [...projects];
+	const reversedProjects = projectsCopy.reverse();
+
 	return (
 		<>
 			<StyledContentDiv>
@@ -167,7 +170,7 @@ function Projects() {
 				<StyledSpanBlue>{curlyBracketsOpenTag}</StyledSpanBlue>
 				{/* map projects and generate a link for each one */}
 
-				{projects.map((project, index) => {
+				{reversedProjects.map((project, index) => {
 					return (
 						<StyledProjectsDiv>
 							<StyledSpanGreen>{linkOpenTag}</StyledSpanGreen>

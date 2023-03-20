@@ -25,4 +25,9 @@ export const projects: Project[] = [
 		name: 'Restaurant Page (Project)',
 		link: 'https://capstone-project-mu-five.vercel.app/',
 	},
+	{
+		id: 5,
+		name: 'Music Blog (Project)',
+		link: 'https://blog-metal-proj.vercel.app/post/6',
+	},
 ];
