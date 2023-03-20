@@ -28,6 +28,6 @@ export const projects: Project[] = [
 	{
 		id: 5,
 		name: 'Music Blog (Project)',
-		link: 'https://blog-metal-proj.vercel.app/post/6',
+		link: 'https://blog-metal-proj.vercel.app/',
 	},
 ];
