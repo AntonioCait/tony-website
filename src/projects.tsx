@@ -30,4 +30,9 @@ export const projects: Project[] = [
 		name: 'Music Blog (Project)',
 		link: 'https://blog-metal-proj.vercel.app/',
 	},
+	{
+		id: 6,
+		name: 'Persianas Garco (Client Project)',
+		link: 'https://client-garco-page.vercel.app/',
+	},
 ];
