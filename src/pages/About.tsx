@@ -114,7 +114,7 @@ function Title(props: { title: string; content: string }) {
 
 export default function About() {
 	const title = 'About me';
-	const content = `My name is Antonio, I’m 24 and, I studied for a bachelor's Degree In Graphic Design and Digital Animation at TecMilenio University, I reside in Mexico. I'm certified in Interactivity and Multimedia Design, Game Design and 3D Animation, but I mainly focus on Front-End Web Development using React, TypeScript, JavaScript, Framer Motion, and UI/UX Design. Also, I have two Coursera specializations: Google UX Design and Meta Front-End Development, just to polish my skills, but I love to learn new things, for now, I keep learning Python and C#`;
+	const content = `My name is Antonio, I’m 24 and, I studied for a bachelor's Degree In Graphic Design and Digital Animation at TecMilenio University, I reside in Mexico. I'm certified in Interactivity and Multimedia Design, Game Design and 3D Animation, but I mainly focus on Front-End Web Development using React, TypeScript, JavaScript, Framer Motion, and UI/UX Design. Also, I have two Coursera specializations: Google UX Design and Meta Front-End Development, just to polish my skills, but I love to learn new things, for now, I keep learning Angular and C#`;
 
 	useEffect(() => {
 		window.scrollTo(0, 0);

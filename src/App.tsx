@@ -202,7 +202,7 @@ function Stack(props: { title: string; stack: string[] }) {
 
 function App() {
 	const titleContent: string = 'Front-End Developer';
-	const contentText: string = `I'm a Junior Front-End Developer with a passion for crafting great user interfaces and solving UI problems. I excel at identifying and solving UI issues, resulting in improved user experiences. With a background in HTML, CSS, JavaScript, React and some TypeScript and NextJS, and a desire to optimize and streamline complex UI systems for web applications, resulting in increased efficiency and user satisfaction. I'm eager to bring my skills and experience to a dynamic company and help them to deliver outstanding user experiences.`;
+	const contentText: string = `I'm a Early Professional Front-End Developer with a passion for crafting great user interfaces and solving UI problems. I excel at identifying and solving UI issues, resulting in improved user experiences. With a background in HTML, CSS, JavaScript, React and some TypeScript and NextJS, and a desire to optimize and streamline complex UI systems for web applications, resulting in increased efficiency and user satisfaction. I'm eager to bring my skills and experience to a dynamic company and help them to deliver outstanding user experiences.`;
 	const titleWork: string = 'Work';
 	const contentWork: string = `I have experience working with React and TypeScript. I have utilized these technologies to build a calculator for Commercial Partners at Microsip Mexico and mainly use Webflow and JavaScript to maintain landing pages. I am continuously learning and trying to improve my skills.`;
 	const titleStack: string = 'Stack';
